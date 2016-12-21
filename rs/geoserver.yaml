@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: ReplicaSet
+metadata:
+  name: geoserver
+spec:
+  replicas: 20
+  template:
+    metadata:
+      labels:
+        app: geoserver
+    spec:
+      containers:
+        - name: geoserver
+          image: containersol/geoserver
+          resources:
+            requests:
+              cpu: 10m
+              memory: 10Mi
